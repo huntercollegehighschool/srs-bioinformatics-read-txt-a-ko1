@@ -10,7 +10,7 @@ def weightedstring(protein):
   with table as open:
     for dat in table:
       corr_values = dat.split()
-      prot_weighted_strings.setdefault(corr_values[0], corr_values[1])
+      prot_weighted_strings[corr_values[0]] = float(corr_values[1])
   return prot_weighted_strings[protein]
 
       
