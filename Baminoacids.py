@@ -3,6 +3,14 @@ Define a function weightedstring that takes a string input protein. The function
 
 weightedstring should read from masstable.txt. It's helpful to have those masses in a dictionary.
 """
+table = open('masstable.txt', 'r')
 
 def weightedstring(protein):
-  pass
+  prot_weighted_strings = {}
+  with table as open:
+    for dat in table:
+      corr_values = dat.split()
+      prot_weighted_strings.setdefault(corr_values[0], corr_values[1])
+  return prot_weighted_strings[protein]
+
+      
